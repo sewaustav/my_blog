@@ -1,0 +1,25 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+
+{% block text %}
+
+{% for el in text %}
+
+<h3 id="h3-fav">{{ el.title }}</h3>
+<p id="p-text">{{ el.text }}</p>
+
+<style type="text/css">
+	#p-text {
+		border: 2px white solid; 
+		border-radius: 7px;
+		padding: 7px; 
+		display: inline;
+	}
+	#h3-fav {
+		margin-left: 4px;
+	}
+</style>
+
+{% endfor %}
+
+{% endblock %}

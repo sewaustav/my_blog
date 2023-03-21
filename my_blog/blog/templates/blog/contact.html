@@ -1,0 +1,75 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+
+{% block text %}
+
+<div id='con-id-div'>
+	If you need any information - contact with me!
+</div>
+
+<ul id="contact-div">
+	<li>
+	<img id="img-tel" src="https://img.icons8.com/color/48/null/telegram-app--v1.png"/><a id="teleg-id" class="href" href='https://t.me/sewabobrov04'>TELEGRAM</a></li>
+	<li><img id="in" src="https://img.icons8.com/color/48/null/linkedin.png"><a id="in-id" class="href" href="https://www.linkedin.com/in/vsevolod-ustav">LinkedIn</a></li>
+	<li><img id="vk" src="https://img.icons8.com/color/48/null/vk-com.png"/><a class="href" id="vk-id" href="https://vk.com/sewaustav04">VK</a></li>
+	<li><img id="inst" src="https://img.icons8.com/fluency/48/null/instagram-new.png"/><a class="href" id="inst-id" href="https://www.instagram.com/sewaustav/?hl=ru">INSTAGRAM</a></li>
+	<li><img id="wa" src="https://img.icons8.com/color/48/null/whatsapp--v1.png"/><a class="href" id="whatsapp-id" href="https://wa.me/qr/TJZMXD3R2JR6C1">WhatsAPP</a></li>
+	<li><img src="https://img.icons8.com/color/48/null/apple-mail.png"/><a id="e-id" class="href" href="mailto:sewaustav@gmail.com">Email</a></li>
+	<li><img id="git-id-img" src="https://img.icons8.com/glyph-neue/38/null/github.png"/><a class="href" id="git-id" href="https://github.com">GitHub</a></li>
+</ul>
+
+
+	<style type="text/css">
+		#con-id-div {
+			margin-top: 20px;
+			margin-left: 40px;
+			font-weight: bold;
+			font-size: 20px;
+			margin-bottom: 50px;
+		}
+		li {
+			list-style-type: none;
+		}
+		.href {
+			position: relative;
+			top: -15px;
+			margin-left: 10px;
+			text-decoration: none;
+			color: white;
+		}
+		#teleg-id:hover {
+			color: #29B6F6;
+		}
+		#in-id:hover {
+			color: #0288D1;
+		}
+		#vk-id:hover {
+			color: #1976D2;
+		}
+		#inst-id:hover {
+			color: #7856BA;
+		}
+		#whatsapp-id:hover {
+			color: #40C351;
+		}
+		#e-id:hover {
+			color: #1E88E5;
+		}
+		#git-id-img {
+			background-color: white;
+			border-radius: 5px;
+			margin-left: 5px;
+		}
+		#git-id {
+			margin-left: 15px;
+		}
+		#git-id:hover {
+			color: #29B6F6;
+		}
+		#contact-div {
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+	</style>
+
+{% endblock %}

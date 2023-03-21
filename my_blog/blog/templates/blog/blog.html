@@ -1,0 +1,72 @@
+{% extends 'blog/index.html' %}
+{% load static %}
+
+{% block text %}
+
+<!--<div class="searсh-form">
+    <form>
+        <input type="text" name="search" class="input-search" id="input-search" placeholder="...">
+        <button id="searсh-btn" type="submit">Search</button>
+    </form>
+</div>
+
+<div id="searсh-text">Удобный поиск по всем записям. Попробуй сейчас.</div><br>-->
+
+<h1>Блог</h1><br>
+
+{% for el in text %}
+    <h3>{{ el.title }}</h3>
+    <p style="border: 2px white solid; border-radius: 7px; padding: 7px; display: inline;">{{ el.text }}</p>
+    <p style="font-size: 10px;">{{ el.datepub }}</p>
+
+    <form method="post" name="fav">
+        {% csrf_token %}
+        <input type="hidden" name="id-post" value="{{ el.id }}">
+        <input type="hidden" name="favorite" value="True">
+        <button id="plus-btn" type="submit" name="button_clicked">+</button>
+    </form>
+{% endfor %}
+
+<div class="form">
+    <h2>Добавить пост</h2>
+    <form method="post" name="create">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.text }}
+        <span>{{ error }}</span><br><br>
+        <button class="btn-create" type="submit">Создать</button>
+    </form><br>
+</div>
+
+<style type="text/css">
+    .btn-create {
+        border-radius: 10px;
+        background-color: #1E88E5;
+        padding: 15px;
+        color: white;
+        font-weight: bolder;
+        font-size: 14px;
+    }
+    .btn-create:hover {
+        background-color: #1976D2;
+        color: black;
+    }
+    .form form #title-create {
+        margin-bottom: 20px;
+        border-radius: 10px;
+        padding: 7px;
+    }
+    .form form #text-create {
+        border-radius: 10px;
+        padding: 7px;
+    }
+    #plus-btn {
+        border-radius: 10px;
+        width: 70px;
+        height: 30px;
+        text-align: center;
+    }
+</style>
+
+
+{% endblock %}

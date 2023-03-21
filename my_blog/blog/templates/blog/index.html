@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Название</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+	</head>
+	<body>
+		<header>
+			<div class="top-panel" id="top-panel">
+				<div class="menu-panel">
+					<button class="menu" id="blog">Blog</button>
+					<div class="content-menu">
+						<a href="{% url 'blog' %}">Blog</a>
+					</div>
+				</div>
+				<div class="menu-panel">
+					<button class="menu" id="favorite">Favorite</button>
+					<div class="content-menu">
+						<a href="{% url 'favorite' %}">Favorite</a>
+					</div>
+				</div>
+				<div class="menu-panel">
+					<button class="menu" id="create">Portfolio</button>
+					<div class="content-menu">
+						<a href="{% url 'portfolio' %}">Portfolio</a>
+					</div>
+				</div>
+				<div class="menu-panel">
+					<button class="menu" id="profile">Profile</button>
+					<div class="content-menu">
+						<a href="{% url 'profile' %}">Profile</a>
+						<a href="{% url 'about' %}">About</a>
+						<a href="{% url 'contact' %}">Contacts</a>
+					</div>
+				</div>
+			</div>
+			<div id="top-text">Личный блог Всеволода Устава</div>
+		</header>
+		<main>
+
+
+			<div class="main-content">
+    			{% block text %}{% endblock %}
+			</div>
+		</main>
+		<footer>
+			<br>
+			<br>
+			<p id="quote">If you are afraid - do not do it, if you do it - do not be afraid, but you did it - do not regret it</p>
+			<hr>
+			<div id="linkss">
+				<a href="{% url 'profile' %}">Profile</a>
+				<a href="{% url 'about' %}">About</a>
+				<a href="{% url 'contact' %}">Contacts</a>
+			</div><hr>
+		</footer>
+
+	<script type="text/javascript" src="{% static 'blog/js/script.js' %}"></script>
+
+	</body>
+</html>
